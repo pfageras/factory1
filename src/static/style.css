@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.loading {
+    color: #8b949e;
+    padding: 2rem 0;
+}
+
+.error {
+    color: #f85149;
+    padding: 1rem;
+    background: #1a0d0d;
+    border: 1px solid #f8514933;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background: #161b22;
+}
+
+th {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #30363d;
+    color: #8b949e;
+    font-weight: 600;
+}
+
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #21262d;
+    vertical-align: top;
+}
+
+tr:hover {
+    background: #161b22;
+}
+
+.cve-id {
+    font-family: monospace;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.cve-id a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.cve-id a:hover {
+    text-decoration: underline;
+}
+
+.description {
+    max-width: 600px;
+    line-height: 1.4;
+}
+
+.score {
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.severity {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.severity-critical {
+    background: #f8514933;
+    color: #f85149;
+}
+
+.severity-high {
+    background: #d2992233;
+    color: #d29922;
+}
+
+.severity-medium {
+    background: #e3b34133;
+    color: #e3b341;
+}
+
+.severity-low {
+    background: #3fb95033;
+    color: #3fb950;
+}
+
+.severity-unknown {
+    background: #30363d;
+    color: #8b949e;
+}
+
+.date {
+    white-space: nowrap;
+    color: #8b949e;
+}
