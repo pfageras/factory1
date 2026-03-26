@@ -1,0 +1,17 @@
+[Unit]
+Description=VulnSite — Sikkerhetshull-oversikt
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=palf
+WorkingDirectory=/home/palf/factory1
+Environment=VULNSITE_PORT=8000
+ExecStart=/home/palf/factory1/.venv/bin/uvicorn src.main:app --host 0.0.0.0 --port ${VULNSITE_PORT}
+Restart=on-failure
+RestartSec=10
+EnvironmentFile=-/home/palf/factory1/deploy/vulnsite.env
+
+[Install]
+WantedBy=multi-user.target

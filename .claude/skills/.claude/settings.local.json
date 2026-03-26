@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/palf/factory1 -name CLAUDE.md -o -name beslutningslogg* -o -name decision*)",
+      "Bash(find /home/palf/factory1 -not -path */.claude/skills/* -not -path */.git/* -type f)",
+      "Bash(find /home/palf -maxdepth 2 -type f \\\\\\(-name *.md -o -name *.json -o -name *.yaml -o -name *.txt \\\\\\))",
+      "Bash(go version:*)",
+      "Bash(java --version)",
+      "Bash(pip install:*)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)"
+    ]
+  }
+}
