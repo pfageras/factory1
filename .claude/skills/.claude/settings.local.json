@@ -12,7 +12,24 @@
       "Bash(git init:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git:*)",
+      "Bash(gh --version)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(curl:*)",
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d[0][''''ghsa_id''''], d[0][''''severity''''] if isinstance\\(d,list\\) and len\\(d\\)>0 else d\\)\")",
+      "Bash(python3 -c \":*)",
+      "Bash(pkill -f uvicorn)",
+      "Bash(source /home/palf/factory1/.venv/bin/activate)",
+      "Bash(timeout 40 bash -c ':*)",
+      "Bash(timeout 25 bash -c ':*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''supply_chain=%d'''' % d[''''total'''']\\)\" curl -s 'http://127.0.0.1:8003/api/cves?filter=malware')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''malware=%d'''' % d[''''total'''']\\)\" curl -s -o /dev/null -w \"%{http_code}\" 'http://127.0.0.1:8003/api/cves?filter=invalid' echo \" \\(expect 422\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''supply_chain=%d'''' % d[''''total'''']\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''malware=%d'''' % d[''''total'''']\\)\")",
+      "Bash(pkill -f \"uvicorn src.main\")"
     ]
   }
 }
