@@ -24,6 +24,13 @@ _cached_cves: list[CVE] = []
 _last_updated: datetime | None = None
 
 
+def _ensure_utc(dt: datetime) -> datetime:
+    """Ensure datetime is timezone-aware (UTC)."""
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=timezone.utc)
+    return dt
+
+
 def _merge_data(nvd_cves: list[CVE], github_advisories: list[CVE]) -> list[CVE]:
     """Merge NVD and GitHub data. Enrich NVD entries with package info where CVE-ID matches."""
     nvd_by_id: dict[str, CVE] = {c.id: c for c in nvd_cves}
@@ -40,7 +47,7 @@ def _merge_data(nvd_cves: list[CVE], github_advisories: list[CVE]) -> list[CVE]:
             # GitHub-only advisory (no matching CVE in NVD)
             merged.append(adv)
 
-    merged.sort(key=lambda c: c.last_modified, reverse=True)
+    merged.sort(key=lambda c: _ensure_utc(c.last_modified), reverse=True)
     return merged
 
 

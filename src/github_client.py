@@ -83,9 +83,12 @@ async def _fetch_advisories_by_type(
         "per_page": PER_PAGE,
         "updated": f">{since}",
     }
+    max_pages = 20  # Cap at 2000 advisories per type
 
-    while url:
-        logger.info("Fetching GitHub advisories type=%s (count so far: %d)", advisory_type, len(advisories))
+    page = 0
+    while url and page < max_pages:
+        page += 1
+        logger.info("Fetching GitHub advisories type=%s page=%d (count so far: %d)", advisory_type, page, len(advisories))
         response = await client.get(url, params=params, headers=headers)
         response.raise_for_status()
 
@@ -102,6 +105,9 @@ async def _fetch_advisories_by_type(
             if 'rel="next"' in part:
                 url = part.split(";")[0].strip().strip("<>")
                 break
+
+    if page >= max_pages:
+        logger.warning("Hit max_pages=%d for type=%s, truncating at %d advisories", max_pages, advisory_type, len(advisories))
 
     return advisories
 
