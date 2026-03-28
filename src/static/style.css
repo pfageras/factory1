@@ -19,7 +19,35 @@ h1 {
 .meta {
     color: #8b949e;
     font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    background: #21262d;
+    color: #8b949e;
+    border: 1px solid #30363d;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    background: #30363d;
+    color: #e1e4e8;
+}
+
+.filter-btn.active {
+    background: #1f6feb;
+    color: #fff;
+    border-color: #1f6feb;
 }
 
 .loading {
@@ -130,4 +158,28 @@ tr:hover {
 .date {
     white-space: nowrap;
     color: #8b949e;
+}
+
+.packages {
+    max-width: 300px;
+    font-size: 0.8rem;
+}
+
+.pkg-badge {
+    display: inline-block;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    margin: 0.1rem 0;
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.pkg-range {
+    color: #f85149;
+}
+
+.pkg-patch {
+    color: #3fb950;
 }

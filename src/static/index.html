@@ -14,13 +14,20 @@
         <span id="last-updated">Laster...</span>
     </div>
 
-    <div id="loading" class="loading">Henter CVE-data fra NVD...</div>
+    <nav class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="supply_chain">Supply chain</button>
+        <button class="filter-btn" data-filter="malware">Malware</button>
+    </nav>
+
+    <div id="loading" class="loading">Henter data...</div>
 
     <table>
         <thead>
             <tr>
-                <th>CVE-ID</th>
+                <th>ID</th>
                 <th>Beskrivelse</th>
+                <th>Pakker</th>
                 <th>CVSS</th>
                 <th>Alvorlighet</th>
                 <th>Sist endret</th>
